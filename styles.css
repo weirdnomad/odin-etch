@@ -61,6 +61,11 @@ h6 {
 }
 
 .box {
-  border: 1px solid hsla(0, 0%, 0%, 0.514);
   flex-grow: 1;
+}
+
+button {
+  position: fixed;
+  right: 2vh;
+  top: 2vh;
 }
