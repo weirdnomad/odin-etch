@@ -68,7 +68,6 @@ h6 {
 
 .box {
   flex-grow: 1;
-  background-color: rgb(20, 19, 0);
   opacity: var(--pixelOpacity, 0);
 }
 

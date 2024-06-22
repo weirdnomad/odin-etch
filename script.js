@@ -1,6 +1,8 @@
 const body = document.querySelector("body");
 const sizeButton = document.querySelector("button");
+
 addBox(16);
+
 function addBox(number) {
   const container = document.querySelector(".container");
   if (number > 100) number = 100;
@@ -13,17 +15,23 @@ function addBox(number) {
       pixel.classList.add("box");
       pixel.classList.add("draw");
       row.appendChild(pixel);
+      
       pixel.addEventListener("mouseover", () => {
-        // pixel.style.backgroundColor = "black";
+        pixelColor();
+        function pixelColor() {
+          const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+          pixel.style.backgroundColor = "#" + randomColor;
+        }
+
         incOpacity();
         function incOpacity() {
           const currentOpacity = parseFloat(
             window.getComputedStyle(pixel).getPropertyValue("--pixelOpacity")
           );
           const opacity = Math.min(currentOpacity + 0.1, 1);
-        
           pixel.style.setProperty("--pixelOpacity", opacity);
         }
+
       });
     }
   }
@@ -42,4 +50,3 @@ function clear() {
   newDiv.classList.add("container");
   body.appendChild(newDiv);
 }
-
